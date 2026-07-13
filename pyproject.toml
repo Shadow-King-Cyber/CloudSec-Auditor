@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cloudsec-auditor"
+version = "1.0.0"
+description = "Auditor de configuración de seguridad en entornos cloud"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [{name = "Shadow-King-Cyber"}]
+keywords = ["security", "cloud", "aws", "cis-benchmark"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Security",
+]
+
+dependencies = [
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+cloudsec-auditor = "cloud_sec_auditor.ui.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["cloud_sec_auditor*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
