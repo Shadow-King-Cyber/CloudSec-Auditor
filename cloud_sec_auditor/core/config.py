@@ -39,7 +39,7 @@ class Config:
         "IAM Misconfig": "C1:2021 — Insecure Identity and Access Management",
         "Insecure Interfaces": "C2:2021 — Insecure Interfaces and APIs",
         "Misconfiguration": "C3:2021 — Misconfiguration and Change Control",
-        " Lack of Visibility": "C4:2021 — Lack of Cloud Security Visibility",
+        "Lack of Visibility": "C4:2021 — Lack of Cloud Security Visibility",
         "Account Hijacking": "C5:2021 — Account Hijacking",
         "Insecure Data": "C6:2021 — Insecure Data Encryption",
         "SSRF": "C7:2021 — System Vulnerabilities Exploited via SSRF",
