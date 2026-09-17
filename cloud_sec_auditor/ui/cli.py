@@ -122,7 +122,8 @@ def mapping() -> None:
 
 
 @main.command()
-def report() -> None:
+@click.option("--provider", type=click.Choice(["aws", "azure", "gcp"]), default="aws", help="Proveedor cloud")
+def report(provider: str) -> None:
     """Genera un reporte HTML + JSON."""
     logger = AuditLogger()
     entries = logger.read_all()
@@ -133,7 +134,7 @@ def report() -> None:
     score_result = scoring.calculate_score(summary.get("severity_summary", {}))
 
     data = ReportData(
-        provider="aws",
+        provider=provider,
         total_findings=summary.get("total", 0),
         severity_summary=summary.get("severity_summary", {}),
         cis_mapping=scoring.get_cis_mapping(),
